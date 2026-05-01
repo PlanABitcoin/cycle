@@ -9,17 +9,24 @@
 <style>
 body { margin:0; font-family:sans-serif; }
 
+/* 🔥 MOBILE-SAFE BUTTONS */
 #zoomControls {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    right: 15px;
+    bottom: calc(30px + env(safe-area-inset-bottom));
+    z-index: 1000;
 }
+
 #zoomControls button {
     display: block;
-    margin: 6px 0;
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
+    margin: 8px 0;
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+    border-radius: 50%;
+    background: #111;
+    color: white;
+    border: none;
 }
 </style>
 </head>
