@@ -88,15 +88,61 @@ const path = g.append("path")
     .attr("stroke", "steelblue")
     .attr("stroke-width", 2);
 
+// =========================
+// HALVINGS
+// =========================
+const halvings = [
+    new Date("2012-11-28"),
+    new Date("2016-07-09"),
+    new Date("2020-05-11"),
+    new Date("2024-04-19")
+];
+
+const halvingLayer = g.append("g");
+
+function drawHalvings() {
+
+    halvingLayer.selectAll("*").remove();
+
+    halvings.forEach((d,i)=>{
+
+        // RED halving
+        halvingLayer.append("line")
+            .attr("x1", x(d))
+            .attr("x2", x(d))
+            .attr("y1", 0)
+            .attr("y2", height)
+            .attr("stroke", "red")
+            .attr("stroke-width", 1.5);
+
+        // ORANGE mid
+        if(i < halvings.length - 1){
+            const mid = new Date((d.getTime() + halvings[i+1].getTime()) / 2);
+
+            halvingLayer.append("line")
+                .attr("x1", x(mid))
+                .attr("x2", x(mid))
+                .attr("y1", 0)
+                .attr("y2", height)
+                .attr("stroke", "orange")
+                .attr("stroke-dasharray", "5,5");
+        }
+    });
+}
+
 function update() {
     xAxis.call(d3.axisBottom(x));
     yAxis.call(d3.axisLeft(y));
     path.attr("d", line);
+
+    drawHalvings();   // 🔥 critical
 }
 
 update();
 
-// BOX ZOOM
+// =========================
+// ZOOM
+// =========================
 const brush = d3.brush()
     .extent([[0,0],[width,height]])
     .on("end", function(event) {
