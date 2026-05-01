@@ -9,7 +9,6 @@
 <style>
 body { margin:0; font-family:sans-serif; }
 
-/* MOBILE SAFE POSITION */
 #zoomControls {
     position: fixed;
     right: 15px;
@@ -75,7 +74,8 @@ const y = d3.scaleLog()
 const x0 = x.domain();
 const y0 = y.domain();
 
-const xAxis = g.append("g").attr("transform", "translate(0," + height + ")");
+const xAxis = g.append("g")
+    .attr("transform", "translate(0," + height + ")");
 const yAxis = g.append("g");
 
 const line = d3.line()
@@ -96,7 +96,7 @@ function update() {
 
 update();
 
-// BOX ZOOM
+// zoom box
 const brush = d3.brush()
     .extent([[0,0],[width,height]])
     .on("end", function(event) {
@@ -111,14 +111,12 @@ const brush = d3.brush()
 
 g.append("g").call(brush);
 
-// RESET
 function resetZoom() {
     x.domain(x0);
     y.domain(y0);
     update();
 }
 
-// BUTTON ZOOM
 function zoomIn() { zoomByFactor(0.7); }
 function zoomOut() { zoomByFactor(1.4); }
 
