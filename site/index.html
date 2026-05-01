@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://d3js.org/d3.v7.min.js"></script>
+
 <style>
 body { margin:0; font-family:sans-serif; }
 
@@ -89,7 +90,7 @@ function update() {
 
 update();
 
-// box zoom
+// BOX ZOOM
 const brush = d3.brush()
     .extent([[0,0],[width,height]])
     .on("end", function(event) {
@@ -104,14 +105,14 @@ const brush = d3.brush()
 
 g.append("g").call(brush);
 
-// reset
+// RESET
 svg.on("dblclick", function() {
     x.domain(x0);
     y.domain(y0);
     update();
 });
 
-// buttons
+// BUTTON ZOOM
 function zoomIn() { zoomByFactor(0.7); }
 function zoomOut() { zoomByFactor(1.4); }
 
