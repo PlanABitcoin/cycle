@@ -9,7 +9,7 @@
 <style>
 body { margin:0; font-family:sans-serif; }
 
-/* 🔥 MOBILE-SAFE BUTTONS */
+/* MOBILE SAFE POSITION */
 #zoomControls {
     position: fixed;
     right: 15px;
@@ -18,11 +18,12 @@ body { margin:0; font-family:sans-serif; }
 }
 
 #zoomControls button {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 8px 0;
     width: 52px;
     height: 52px;
-    font-size: 22px;
     border-radius: 50%;
     background: #111;
     color: white;
@@ -34,6 +35,11 @@ body { margin:0; font-family:sans-serif; }
 <body>
 
 <div id="zoomControls">
+    <button onclick="resetZoom()">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path fill="white" d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+        </svg>
+    </button>
     <button onclick="zoomIn()">+</button>
     <button onclick="zoomOut()">−</button>
 </div>
@@ -106,11 +112,11 @@ const brush = d3.brush()
 g.append("g").call(brush);
 
 // RESET
-svg.on("dblclick", function() {
+function resetZoom() {
     x.domain(x0);
     y.domain(y0);
     update();
-});
+}
 
 // BUTTON ZOOM
 function zoomIn() { zoomByFactor(0.7); }
