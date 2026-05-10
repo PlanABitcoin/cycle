@@ -3,166 +3,306 @@
 <html>
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Bitcoin Cycle</title>
+
 <link rel="icon" href="data:,">
 
 <style>
 
 body {
+
     margin: 0;
+
     font-family: Arial, sans-serif;
+
     background: #f6f4ef;
+
     color: #111;
 }
 
 .page {
+
     display: grid;
+
     grid-template-columns: 320px 1fr;
+
     min-height: 100vh;
 }
 
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
 .sidebar {
+
     background: #111;
+
     color: white;
+
     padding: 32px 24px;
 }
 
 .sidebar h2 {
+
     font-size: 30px;
+
     margin-bottom: 28px;
 }
 
 .sidebar a {
+
     display: block;
+
     color: white;
+
     text-decoration: none;
+
     font-size: 24px;
+
     padding: 22px 0;
+
     border-bottom: 1px solid #333;
+
+    transition: 0.2s;
 }
 
 .sidebar a:hover {
+
     color: #f2a900;
+
+    transform: translateX(6px);
 }
 
+/* ============================================================
+   MAIN
+============================================================ */
+
 .main {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 45px;
+
     text-align: center;
 }
 
 .cover {
+
     width: 520px;
+
     max-width: 92vw;
+
     border-radius: 24px;
+
     box-shadow: 0 18px 60px rgba(0,0,0,0.45);
 }
 
 h1 {
+
     font-size: 56px;
+
     margin: 30px 0 8px;
 }
 
 h3 {
+
     font-size: 28px;
+
     font-weight: normal;
+
     margin: 0 0 32px;
+
     color: #555;
 }
 
 .book-button {
+
     display: inline-block;
+
     background: #111;
+
     color: white;
+
     padding: 26px 42px;
+
     border-radius: 18px;
+
     text-decoration: none;
+
     font-size: 30px;
+
     font-weight: bold;
+
+    transition: 0.2s;
 }
 
 .book-button:hover {
+
     background: #f2a900;
+
     color: #111;
+
+    transform: scale(1.03);
 }
+
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 850px) {
 
     .page {
+
         grid-template-columns: 1fr;
+
+        display: flex;
+
+        flex-direction: column;
     }
 
+    /* BOOK FIRST */
+    .main {
+
+        order: 1;
+    }
+
+    /* FIGURES AFTER */
     .sidebar {
+
+        order: 2;
+
         text-align: center;
     }
 
     .sidebar h2 {
+
         font-size: 34px;
     }
 
     .sidebar a {
+
         font-size: 28px;
+
         padding: 24px 0;
     }
 
     .cover {
+
         width: 92vw;
     }
 
     h1 {
+
         font-size: 42px;
     }
 
     h3 {
+
         font-size: 30px;
     }
 
     .book-button {
+
         width: 85vw;
+
         font-size: 32px;
+
         padding: 28px 0;
     }
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="page">
 
+    <!-- ====================================================
+         SIDEBAR
+    ===================================================== -->
+
     <div class="sidebar">
 
         <h2>Interactive Figures</h2>
 
-        <a href="figures/f_pred.html">Prediction</a>
-        <a href="figures/f_cycle.html">Bitcoin Cycles</a>
-        <a href="figures/f_cycle_only_up.html">Up Cycles</a>
-        <a href="figures/f_down.html">Down Cycles</a>
-        <a href="figures/f_cost.html">Mining Cost</a>
-        <a href="figures/f_cycle_dates.html">Cycle Dates</a>
-        <a href="figures/f_dem1.html">Diminishing Returns 1</a>
-        <a href="figures/f_dem2.html">Diminishing Returns 2</a>
-        <a href="figures/f_seg.html">Cycle Segments</a>
-        <a href="figures/f_powerlaw.html">Power Law</a>
+        <a href="figures/f_pred.html">
+            Prediction
+        </a>
+
+        <a href="figures/f_cycle.html">
+            Bitcoin Cycles
+        </a>
+
+        <a href="figures/f_cycle_only_up.html">
+            Up Cycles
+        </a>
+
+        <a href="figures/f_down.html">
+            Down Cycles
+        </a>
+
+        <a href="figures/f_cost.html">
+            Mining Cost
+        </a>
+
+        <a href="figures/f_cycle_dates.html">
+            Cycle Dates
+        </a>
+
+        <a href="figures/f_dem1.html">
+            Diminishing Returns 1
+        </a>
+
+        <a href="figures/f_dem2.html">
+            Diminishing Returns 2
+        </a>
+
+        <a href="figures/f_seg.html">
+            Cycle Segments
+        </a>
+
+        <a href="figures/f_powerlaw.html">
+            Power Law
+        </a>
 
     </div>
 
+    <!-- ====================================================
+         MAIN BOOK SECTION
+    ===================================================== -->
+
     <div class="main">
 
-        <img class="cover" src="book/cover.png" alt="Bitcoin Cycle Book Cover">
+        <img
+            class="cover"
+            src="book/cover.png"
+            alt="Bitcoin Cycle Book Cover"
+        >
 
         <h1>Bitcoin Cycle</h1>
 
         <h3>By Plan A</h3>
 
-        <a class="book-button" href="book/bitcoin_cycle.pdf">
+        <a
+            class="book-button"
+            href="book/bitcoin_cycle.pdf"
+        >
             Read the Book PDF
         </a>
 
