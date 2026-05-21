@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bitcoin Heatmap</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-3.9.0.min.js"></script>
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.9.0.min.js"></script>
+<script>
+Bokeh.set_log_level("info");
+</script>
+  </head>
+  <body>
+    <div id="b9c34b11-4e4e-4fa9-8341-bb3dd3dc6084" data-root-id="p1063" style="display: contents;"></div>
+  
+    <script type="application/json" id="e8e7a227-4863-4cba-b4c3-fa7d6a71f0dc">
+      {"c6063585-a8b3-4c55-8241-4489c5aa59f7":{"version":"3.9.0","title":"Bokeh Application","config":{"type":"object","name":"DocumentConfig","id":"p1066","attributes":{"notifications":{"type":"object","name":"Notifications","id":"p1067"}}},"roots":[{"type":"object","name":"Column","id":"p1063","attributes":{"sizing_mode":"stretch_width","children":[{"type":"object","name":"Figure","id":"p1022","attributes":{"height":620,"sizing_mode":"stretch_width","x_range":{"type":"object","name":"FactorRange","id":"p1032","attributes":{"factors":["S1","S2","S3","S4","S5","S6","S7","S8"]}},"y_range":{"type":"object","name":"FactorRange","id":"p1033","attributes":{"factors":["Cycle 4 (840K\u2013950K)","Cycle 3 (630K\u2013839K)","Cycle 2 (420K\u2013629K)","Cycle 1 (210K\u2013419K)"]}},"x_scale":{"type":"object","name":"CategoricalScale","id":"p1034"},"y_scale":{"type":"object","name":"CategoricalScale","id":"p1035"},"title":{"type":"object","name":"Title","id":"p1025","attributes":{"text":"Bitcoin Cycle Returns Heatmap","text_font_size":"24pt","align":"center"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1049","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1006","attributes":{"selected":{"type":"object","name":"Selection","id":"p1007","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1008"},"data":{"type":"map","entries":[["cycle",["Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 1 (210K\u2013419K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 2 (420K\u2013629K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 3 (630K\u2013839K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)","Cycle 4 (840K\u2013950K)"]],["segment",["S1","S2","S3","S4","S5","S6","S7","S8","S1","S2","S3","S4","S5","S6","S7","S8","S1","S2","S3","S4","S5","S6","S7","S8","S1","S2","S3","S4","S5","S6","S7","S8"]],["value",[799.5983935742972,8.667483803186848,345.59173947577443,-13.376151093905808,-60.45887702304837,34.05701254275941,33.65609924190214,74.40025252525251,54.05384532212973,167.7547315032267,461.2167371184894,-57.531949378224226,-41.62574325937172,104.04633856463343,9.485634603898907,1.414915109727155,77.88192288723201,274.61722369335064,7.406241531094904,-41.276471729667655,-43.91423779545225,43.16732287884661,15.927580674502174,85.03232087261283,3.708057535337961,23.568428467458368,32.471070715921456,-35.275609226358554,4.4045892909177375,0.0,0.0,0.0]],["label",["+799.6%","+8.7%","+345.6%","-13.4%","-60.5%","+34.1%","+33.7%","+74.4%","+54.1%","+167.8%","+461.2%","-57.5%","-41.6%","+104.0%","+9.5%","+1.4%","+77.9%","+274.6%","+7.4%","-41.3%","-43.9%","+43.2%","+15.9%","+85.0%","+3.7%","+23.6%","+32.5%","-35.3%","+4.4%","0.0%","0.0%","0.0%"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1050","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1051"}}},"glyph":{"type":"object","name":"Rect","id":"p1046","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"width":{"type":"value","value":1},"height":{"type":"value","value":1},"line_color":{"type":"value","value":"white"},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"value","transform":{"type":"object","name":"LinearColorMapper","id":"p1009","attributes":{"palette":["#e32620","#ea4b44","#ee736d","#f4a7a3","#f9f4f4","#ffffff","#ffffff","#f9fff9","#d8ead8","#9ed09e","#1f9d4a"],"low":-100,"high":100}}}}},"nonselection_glyph":{"type":"object","name":"Rect","id":"p1047","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"width":{"type":"value","value":1},"height":{"type":"value","value":1},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.1},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"value","transform":{"id":"p1009"}},"fill_alpha":{"type":"value","value":0.1},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"Rect","id":"p1048","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"width":{"type":"value","value":1},"height":{"type":"value","value":1},"line_color":{"type":"value","value":"white"},"line_alpha":{"type":"value","value":0.2},"line_width":{"type":"value","value":2},"fill_color":{"type":"field","field":"value","transform":{"id":"p1009"}},"fill_alpha":{"type":"value","value":0.2},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1055","attributes":{"data_source":{"id":"p1006"},"view":{"type":"object","name":"CDSView","id":"p1056","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1057"}}},"glyph":{"type":"object","name":"Text","id":"p1052","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"text":{"type":"field","field":"label"},"text_color":{"type":"value","value":"black"},"text_font_size":{"type":"value","value":"12pt"},"text_align":{"type":"value","value":"center"},"text_baseline":{"type":"value","value":"middle"}}},"nonselection_glyph":{"type":"object","name":"Text","id":"p1053","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"text":{"type":"field","field":"label"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.1},"text_font_size":{"type":"value","value":"12pt"},"text_align":{"type":"value","value":"center"},"text_baseline":{"type":"value","value":"middle"}}},"muted_glyph":{"type":"object","name":"Text","id":"p1054","attributes":{"x":{"type":"field","field":"segment"},"y":{"type":"field","field":"cycle"},"text":{"type":"field","field":"label"},"text_color":{"type":"value","value":"black"},"text_alpha":{"type":"value","value":0.2},"text_font_size":{"type":"value","value":"12pt"},"text_align":{"type":"value","value":"center"},"text_baseline":{"type":"value","value":"middle"}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1031","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1010"},{"type":"object","name":"WheelZoomTool","id":"p1011","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1012","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1013","attributes":{"syncable":false,"line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","handles":{"type":"object","name":"BoxInteractionHandles","id":"p1019","attributes":{"all":{"type":"object","name":"AreaVisuals","id":"p1018","attributes":{"fill_color":"white","hover_fill_color":"lightgray"}}}}}}}},{"type":"object","name":"ResetTool","id":"p1020"},{"type":"object","name":"SaveTool","id":"p1021"},{"type":"object","name":"HoverTool","id":"p1058","attributes":{"renderers":"auto","tooltips":[["Cycle","@cycle"],["Segment","@segment"],["Return","@label"]],"sort_by":null}}],"active_drag":{"id":"p1012"},"active_scroll":{"id":"p1011"}}},"toolbar_location":null,"left":[{"type":"object","name":"CategoricalAxis","id":"p1041","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1042"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1043"},"axis_label":"Cycle Range","major_label_policy":{"type":"object","name":"AllLabels","id":"p1044"},"major_label_text_font_size":"12pt"}}],"right":[{"type":"object","name":"ColorBar","id":"p1060","attributes":{"location":[0,0],"width":22,"title":"Return %","ticker":{"type":"object","name":"BasicTicker","id":"p1059","attributes":{"mantissas":[1,2,5]}},"major_label_policy":{"type":"object","name":"NoOverlap","id":"p1061"},"label_standoff":8,"color_mapper":{"id":"p1009"}}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p1036","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1037"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1038"},"axis_label":"Segments (26,250 blocks each)","major_label_policy":{"type":"object","name":"AllLabels","id":"p1039"},"major_label_text_font_size":"14pt"}}],"center":[{"type":"object","name":"Grid","id":"p1040","attributes":{"axis":{"id":"p1036"},"grid_line_alpha":0.15}},{"type":"object","name":"Grid","id":"p1045","attributes":{"dimension":1,"axis":{"id":"p1041"},"grid_line_alpha":0.15}}]}},{"type":"object","name":"Div","id":"p1062","attributes":{"text":"\n&lt;div style=\"\nmax-width:1200px;\nmargin:auto;\npadding:25px;\nbackground:#081224;\nborder-radius:20px;\ncolor:white;\n\"&gt;\n\n&lt;h1 style=\"text-align:center;\"&gt;\n\ud83d\udd25 Bitcoin Cycle Returns Heatmap\n&lt;/h1&gt;\n\n&lt;p style=\"\ntext-align:center;\nfont-size:22px;\n\"&gt;\n\nEach cycle is divided into\n&lt;b&gt;8&lt;/b&gt;\nsegments.\n\nWhite =\nnear zero.\n\n&lt;/p&gt;\n\n&lt;div style=\"\ndisplay:grid;\ngrid-template-columns:1fr 1fr 1fr;\ngap:20px;\n\"&gt;\n\n&lt;div&gt;\n&lt;h3&gt;\ud83d\udcca Meaning&lt;/h3&gt;\n\n&lt;ul&gt;\n&lt;li&gt;Green \u2192 positive&lt;/li&gt;\n&lt;li&gt;White \u2192 near zero&lt;/li&gt;\n&lt;li&gt;Red \u2192 negative&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n&lt;div&gt;\n\n&lt;h3&gt;\ud83c\udfae Controls&lt;/h3&gt;\n\n&lt;ul&gt;\n&lt;li&gt;Wheel zoom&lt;/li&gt;\n&lt;li&gt;Pan&lt;/li&gt;\n&lt;li&gt;Hover values&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;/div&gt;\n\n&lt;div&gt;\n\n&lt;h3&gt;\ud83e\uddee Current&lt;/h3&gt;\n\n&lt;p&gt;\n\nBlock:\n\n&lt;b&gt;\n110,295\n&lt;/b&gt;\n\n&lt;/p&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n\n&lt;/div&gt;\n"}}]}}]}}
+    </script>
+    <script>
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('e8e7a227-4863-4cba-b4c3-fa7d6a71f0dc').textContent;
+              const render_items = [{"docid":"c6063585-a8b3-4c55-8241-4489c5aa59f7","roots":{"p1063":"b9c34b11-4e4e-4fa9-8341-bb3dd3dc6084"},"root_ids":["p1063"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>
