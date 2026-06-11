@@ -2,8 +2,10 @@
 .vscode/
 BU/
 __pycache__/
+**pycache**/
 *.py
 *.py[cod]
 *.bat
+.git-rewrite/
 run_log.txt
 website_log.txt
