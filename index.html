@@ -217,7 +217,7 @@ h3 {
 
     display: inline-block;
 
-    min-width: 104px;
+    min-width: 118px;
 
     background: #111;
 
@@ -335,7 +335,7 @@ h3 {
 
     .share-button {
 
-        min-width: 38vw;
+        min-width: 40vw;
 
         font-size: 18px;
 
@@ -479,6 +479,15 @@ h3 {
 
         <a
             class="share-button"
+            href="https://api.whatsapp.com/send?text=Bitcoin%20Cycle%20https%3A%2F%2Fcycbtc.com"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            WhatsApp
+        </a>
+
+        <a
+            class="share-button"
             href="mailto:?subject=Bitcoin%20Cycle&body=https%3A%2F%2Fcycbtc.com"
         >
             Email
@@ -496,18 +505,27 @@ const SITE_URL = "https://cycbtc.com";
 const SITE_TITLE = "Bitcoin Cycle";
 
 function shareSite() {
-    if (navigator.share) {
+    if (navigator.share && window.isSecureContext && location.protocol === "https:") {
         navigator.share({
             title: SITE_TITLE,
             text: SITE_TITLE,
             url: SITE_URL
-        }).catch(function() {});
+        }).catch(function() {
+            copySiteUrl();
+        });
         return;
     }
 
+    copySiteUrl();
+}
+
+function copySiteUrl() {
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(SITE_URL);
+        return;
     }
+
+    window.prompt("Copy this link:", SITE_URL);
 }
 </script>
 
