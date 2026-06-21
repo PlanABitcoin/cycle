@@ -167,6 +167,88 @@ h3 {
     transform: scale(1.03);
 }
 
+.visitor-section {
+
+    width: min(760px, 92vw);
+
+    margin: 38px auto 0;
+
+    padding-top: 34px;
+
+    border-top: 1px solid #d6d1c7;
+
+    text-align: center;
+}
+
+.visitor-section p {
+
+    font-size: 20px;
+
+    line-height: 1.55;
+
+    margin: 0 auto 14px;
+
+    color: #333;
+}
+
+.visitor-section a {
+
+    color: #f2a900;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.share-row {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 24px;
+}
+
+.share-button {
+
+    display: inline-block;
+
+    min-width: 104px;
+
+    background: #111;
+
+    color: white;
+
+    border: 0;
+
+    padding: 14px 20px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.share-button:hover {
+
+    background: #f2a900;
+
+    color: #111;
+
+    transform: scale(1.03);
+}
+
 /* ============================================================
    MOBILE
 ============================================================ */
@@ -230,6 +312,34 @@ h3 {
         font-size: 32px;
 
         padding: 28px 0;
+    }
+
+    .visitor-section {
+
+        width: 88vw;
+
+        margin-top: 34px;
+
+        padding-top: 30px;
+    }
+
+    .visitor-section p {
+
+        font-size: 20px;
+    }
+
+    .share-row {
+
+        gap: 10px;
+    }
+
+    .share-button {
+
+        min-width: 38vw;
+
+        font-size: 18px;
+
+        padding: 16px 12px;
     }
 }
 
@@ -307,42 +417,99 @@ h3 {
 
 
 
-<p style="
-    font-size:20px;
-    max-width:650px;
-    line-height:1.5;
-    margin:0 0 14px;
-    color:#333;
-">
-    Feedback, comments, suggestions, criticism, and lecture invitations are welcome.
-    I'd love to hear from you.
-</p>
-
-<p style="
-    font-size:20px;
-    margin:0 0 28px;
-">
-    <a
-        href="mailto:planA.bitcoin@gmail.com"
-        style="
-            color:#f2a900;
-            text-decoration:none;
-            font-weight:bold;
-        "
-    >
-        planA.bitcoin@gmail.com
-    </a>
-</p>
-
 <a
     class="book-button"
     href="book/Bitcoin_book.pdf"
 >
     Read the Book PDF
 </a>
+
+<section class="visitor-section">
+
+    <p>Thank you for visiting Bitcoin Cycle.</p>
+
+    <p>
+        Feedback, comments, suggestions, criticism, podcast invitations,
+        and lecture requests are welcome.
+    </p>
+
+    <p>
+        📧
+        <a href="mailto:planA.bitcoin@gmail.com">
+            planA.bitcoin@gmail.com
+        </a>
+    </p>
+
+    <div class="share-row">
+
+        <button
+            class="share-button"
+            type="button"
+            onclick="shareSite()"
+        >
+            Share
+        </button>
+
+        <a
+            class="share-button"
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcycbtc.com&text=Bitcoin%20Cycle"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            X
+        </a>
+
+        <a
+            class="share-button"
+            href="https://www.reddit.com/submit?url=https%3A%2F%2Fcycbtc.com&title=Bitcoin%20Cycle"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Reddit
+        </a>
+
+        <a
+            class="share-button"
+            href="https://t.me/share/url?url=https%3A%2F%2Fcycbtc.com&text=Bitcoin%20Cycle"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            Telegram
+        </a>
+
+        <a
+            class="share-button"
+            href="mailto:?subject=Bitcoin%20Cycle&body=https%3A%2F%2Fcycbtc.com"
+        >
+            Email
+        </a>
+
+    </div>
+
+</section>
     </div>
 
 </div>
+
+<script>
+const SITE_URL = "https://cycbtc.com";
+const SITE_TITLE = "Bitcoin Cycle";
+
+function shareSite() {
+    if (navigator.share) {
+        navigator.share({
+            title: SITE_TITLE,
+            text: SITE_TITLE,
+            url: SITE_URL
+        }).catch(function() {});
+        return;
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(SITE_URL);
+    }
+}
+</script>
 
 </body>
 </html>
