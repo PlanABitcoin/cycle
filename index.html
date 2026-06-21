@@ -19,7 +19,7 @@ gtag('config', 'G-QEZ8T2PWJ3');
     content="width=device-width, initial-scale=1.0"
 >
 
-<title>Bitcoin Cycle</title>
+<title>The Cycle of Bitcoinn</title>
 
 <link rel="icon" href="data:,">
 
@@ -200,34 +200,36 @@ h3 {
     font-weight: bold;
 }
 
-.share-row {
+.share-stack {
 
     display: flex;
 
-    flex-wrap: wrap;
+    flex-direction: row;
 
     justify-content: center;
 
-    gap: 12px;
+    align-items: center;
+
+    gap: 14px;
 
     margin-top: 24px;
 }
 
-.share-button {
+.share-icon {
 
-    display: inline-block;
+    display: inline-flex;
 
-    min-width: 118px;
+    align-items: center;
 
-    background: #111;
+    justify-content: center;
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 50%;
 
     color: white;
-
-    border: 0;
-
-    padding: 14px 20px;
-
-    border-radius: 14px;
 
     text-decoration: none;
 
@@ -235,18 +237,41 @@ h3 {
 
     font-weight: bold;
 
-    cursor: pointer;
-
     transition: 0.2s;
 }
 
-.share-button:hover {
+.share-icon:hover {
 
-    background: #f2a900;
+    transform: scale(1.12);
+}
 
-    color: #111;
+.share-icon svg {
 
-    transform: scale(1.03);
+    width: 18px;
+
+    height: 18px;
+
+    fill: currentColor;
+}
+
+.share-icon.x {
+
+    background: #1da1f2;
+}
+
+.share-icon.facebook {
+
+    background: #4b65a2;
+}
+
+.share-icon.email {
+
+    background: #7a7a7a;
+}
+
+.share-icon.whatsapp {
+
+    background: #25d366;
 }
 
 /* ============================================================
@@ -328,18 +353,25 @@ h3 {
         font-size: 20px;
     }
 
-    .share-row {
+    .share-stack {
 
-        gap: 10px;
+        flex-direction: row;
+
+        gap: 14px;
     }
 
-    .share-button {
+    .share-icon {
 
-        min-width: 40vw;
+        width: 42px;
 
-        font-size: 18px;
+        height: 42px;
+    }
 
-        padding: 16px 12px;
+    .share-icon svg {
+
+        width: 21px;
+
+        height: 21px;
     }
 }
 
@@ -408,10 +440,10 @@ h3 {
         <img
             class="cover"
             src="book/cover.png"
-            alt="Bitcoin Cycle Book Cover"
+            alt="The Cycle of Bitcoinn Book Cover"
         >
 
-     <h1>Bitcoin Cycle</h1>
+     <h1>The Cycle of Bitcoinn</h1>
 
 <h3>By Plan A</h3>
 
@@ -426,7 +458,7 @@ h3 {
 
 <section class="visitor-section">
 
-    <p>Thank you for visiting Bitcoin Cycle.</p>
+    <p>Thank you for visiting The Cycle of Bitcoinn.</p>
 
     <p>
         Feedback, comments, suggestions, criticism, podcast invitations,
@@ -440,57 +472,56 @@ h3 {
         </a>
     </p>
 
-    <div class="share-row">
-
-        <button
-            class="share-button"
-            type="button"
-            onclick="shareSite()"
-        >
-            Share
-        </button>
+    <div class="share-stack" aria-label="Share The Cycle of Bitcoinn">
 
         <a
-            class="share-button"
-            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcycbtc.com&text=Bitcoin%20Cycle"
+            class="share-icon x"
+            href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcycbtc.com&text=The%20Cycle%20of%20Bitcoinn"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Share on X"
+            title="Share on X"
         >
-            X
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.5 3h3.1l-6.8 7.8L22 21h-6.4l-5-6.5L4.9 21H1.8l7.3-8.4L1.2 3h6.6l4.5 5.9L17.5 3Zm-1.1 16.2h1.7L6.9 4.7H5.1l11.3 14.5Z"/>
+            </svg>
         </a>
 
         <a
-            class="share-button"
-            href="https://www.reddit.com/submit?url=https%3A%2F%2Fcycbtc.com&title=Bitcoin%20Cycle"
+            class="share-icon facebook"
+            href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcycbtc.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Share on Facebook"
+            title="Share on Facebook"
         >
-            Reddit
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14.2 8.4V6.9c0-.7.5-.9.8-.9h2V3h-2.8c-3.1 0-3.8 2.3-3.8 3.8v1.6H8v3.2h2.4V21h3.8v-9.4h2.7l.4-3.2h-3.1Z"/>
+            </svg>
         </a>
 
         <a
-            class="share-button"
-            href="https://t.me/share/url?url=https%3A%2F%2Fcycbtc.com&text=Bitcoin%20Cycle"
-            target="_blank"
-            rel="noopener noreferrer"
+            class="share-icon email"
+            href="mailto:?subject=The%20Cycle%20of%20Bitcoinn&body=https%3A%2F%2Fcycbtc.com"
+            aria-label="Share by email"
+            title="Share by email"
         >
-            Telegram
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 5h18v14H3V5Zm9 8.3L5.4 7H4.8v.7l7.2 6.9 7.2-6.9V7h-.6L12 13.3Z"/>
+            </svg>
         </a>
 
         <a
-            class="share-button"
-            href="https://api.whatsapp.com/send?text=Bitcoin%20Cycle%20https%3A%2F%2Fcycbtc.com"
+            class="share-icon whatsapp"
+            href="https://api.whatsapp.com/send?text=The%20Cycle%20of%20Bitcoinn%20https%3A%2F%2Fcycbtc.com"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Share on WhatsApp"
+            title="Share on WhatsApp"
         >
-            WhatsApp
-        </a>
-
-        <a
-            class="share-button"
-            href="mailto:?subject=Bitcoin%20Cycle&body=https%3A%2F%2Fcycbtc.com"
-        >
-            Email
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.2A9.7 9.7 0 0 0 3.7 17l-1.2 4.8 4.9-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.6a7.9 7.9 0 0 1-4-1.1l-.3-.2-2.9.7.8-2.8-.2-.3A7.9 7.9 0 1 1 12 19.8Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.2.2-.3.2-.6.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.7 2.7 4.2 3.7.6.3 1 .4 1.4.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+            </svg>
         </a>
 
     </div>
@@ -499,35 +530,6 @@ h3 {
     </div>
 
 </div>
-
-<script>
-const SITE_URL = "https://cycbtc.com";
-const SITE_TITLE = "Bitcoin Cycle";
-
-function shareSite() {
-    if (navigator.share && window.isSecureContext && location.protocol === "https:") {
-        navigator.share({
-            title: SITE_TITLE,
-            text: SITE_TITLE,
-            url: SITE_URL
-        }).catch(function() {
-            copySiteUrl();
-        });
-        return;
-    }
-
-    copySiteUrl();
-}
-
-function copySiteUrl() {
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(SITE_URL);
-        return;
-    }
-
-    window.prompt("Copy this link:", SITE_URL);
-}
-</script>
 
 </body>
 </html>
