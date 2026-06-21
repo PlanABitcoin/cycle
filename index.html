@@ -200,6 +200,64 @@ h3 {
     font-weight: bold;
 }
 
+.email-line {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.copy-email-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 28px;
+
+    height: 28px;
+
+    border: 0;
+
+    border-radius: 50%;
+
+    background: #111;
+
+    color: #f2a900;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.copy-email-button:hover {
+
+    background: #f2a900;
+
+    color: #111;
+
+    transform: scale(1.08);
+}
+
+.copy-email-button svg {
+
+    width: 16px;
+
+    height: 16px;
+
+    stroke: currentColor;
+
+    fill: none;
+
+    stroke-width: 2;
+}
+
 .share-stack {
 
     display: flex;
@@ -353,6 +411,11 @@ h3 {
         font-size: 20px;
     }
 
+    .email-line {
+
+        flex-wrap: wrap;
+    }
+
     .share-stack {
 
         flex-direction: row;
@@ -465,11 +528,22 @@ h3 {
         and lecture requests are welcome.
     </p>
 
-    <p>
-        📧
+    <p class="email-line">
         <a href="mailto:planA.bitcoin@gmail.com">
             planA.bitcoin@gmail.com
         </a>
+        <button
+            class="copy-email-button"
+            type="button"
+            onclick="copyEmailAddress()"
+            aria-label="Copy email address"
+            title="Copy email address"
+        >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="9" y="9" width="10" height="10" rx="2"/>
+                <path d="M5 15V7a2 2 0 0 1 2-2h8"/>
+            </svg>
+        </button>
     </p>
 
     <div class="share-stack" aria-label="Share The Cycle of Bitcoin">
@@ -530,6 +604,19 @@ h3 {
     </div>
 
 </div>
+
+<script>
+function copyEmailAddress() {
+    const email = "planA.bitcoin@gmail.com";
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email);
+        return;
+    }
+
+    window.prompt("Copy this email:", email);
+}
+</script>
 
 </body>
 </html>
