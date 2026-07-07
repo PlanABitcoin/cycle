@@ -137,6 +137,71 @@ h3 {
     color: #555;
 }
 
+.price-ticker {
+
+    display: flex;
+
+    gap: 14px;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    margin: 0 0 30px;
+}
+
+.price-item {
+
+    min-width: 170px;
+
+    padding: 13px 16px;
+
+    border: 1px solid #d6d1c7;
+
+    border-radius: 8px;
+
+    background: #fffaf0;
+
+    text-align: left;
+}
+
+.price-symbol {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 0;
+
+    color: #777;
+}
+
+.price-value {
+
+    display: block;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #111;
+}
+
+.price-updated {
+
+    width: 100%;
+
+    margin-top: -4px;
+
+    font-size: 13px;
+
+    color: #777;
+}
+
 .book-button {
 
     display: inline-block;
@@ -403,6 +468,29 @@ h3 {
         font-size: 30px;
     }
 
+    .price-ticker {
+
+        width: 88vw;
+
+        gap: 10px;
+
+        margin-bottom: 26px;
+    }
+
+    .price-item {
+
+        flex: 1 1 145px;
+
+        min-width: 0;
+
+        text-align: center;
+    }
+
+    .price-value {
+
+        font-size: 22px;
+    }
+
     .book-button {
 
         width: 85vw;
@@ -518,6 +606,20 @@ h3 {
      <h1>The Cycle of Bitcoin</h1>
 
 <h3>By Plan A</h3>
+
+<div class="price-ticker" aria-label="Current crypto prices">
+    <div class="price-item">
+        <span class="price-symbol">BTC / USD</span>
+        <span class="price-value" id="btc-price">Loading...</span>
+    </div>
+    <div class="price-item">
+        <span class="price-symbol">ETH / USD</span>
+        <span class="price-value" id="eth-price">Loading...</span>
+    </div>
+    <div class="price-updated" id="price-updated">
+        Live prices from Coinbase
+    </div>
+</div>
 
 
 
@@ -635,6 +737,63 @@ function copyEmailAddress() {
 
     window.prompt("Copy this email:", email);
 }
+
+const priceFormatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0
+});
+
+function setPriceStatus(message) {
+    const status = document.getElementById("price-updated");
+
+    if (status) {
+        status.textContent = message;
+    }
+}
+
+async function fetchCoinbaseSpotPrice(symbol) {
+    const response = await fetch(
+        `https://api.coinbase.com/v2/prices/${symbol}-USD/spot`,
+        { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+        throw new Error(`Price request failed for ${symbol}`);
+    }
+
+    const payload = await response.json();
+    return Number(payload.data.amount);
+}
+
+async function updateLivePrices() {
+    const btcElement = document.getElementById("btc-price");
+    const ethElement = document.getElementById("eth-price");
+
+    try {
+        const [btcPrice, ethPrice] = await Promise.all([
+            fetchCoinbaseSpotPrice("BTC"),
+            fetchCoinbaseSpotPrice("ETH")
+        ]);
+
+        btcElement.textContent = priceFormatter.format(btcPrice);
+        ethElement.textContent = priceFormatter.format(ethPrice);
+
+        const updatedAt = new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit"
+        });
+
+        setPriceStatus(`Live prices from Coinbase, updated ${updatedAt}`);
+    } catch (error) {
+        btcElement.textContent = "Unavailable";
+        ethElement.textContent = "Unavailable";
+        setPriceStatus("Live prices are temporarily unavailable");
+    }
+}
+
+updateLivePrices();
+setInterval(updateLivePrices, 30000);
 </script>
 
 </body>
