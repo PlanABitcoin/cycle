@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QEZ8T2PWJ3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QEZ8T2PWJ3');
+</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bitcoin Downward Periods</title>
+    <style>
+        :root {
+            --ink: #111827;
+            --muted: #4b5563;
+            --line: #d1d5db;
+            --panel: #f8fafc;
+            --accent: #b91c1c;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: var(--ink);
+            background: white;
+        }
+
+        .page {
+            width: min(1180px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 28px 0 48px 0;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .home-link {
+            color: white;
+            background: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 11px 16px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            margin: 28px 0 12px 0;
+            font-size: clamp(30px, 5vw, 50px);
+            line-height: 1.05;
+        }
+
+        .lede {
+            max-width: 900px;
+            color: var(--muted);
+            font-size: 19px;
+            line-height: 1.65;
+            margin-bottom: 28px;
+        }
+
+        .figure-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            padding: 18px;
+            margin: 28px 0;
+        }
+
+        .figure-card h2 {
+            margin: 0 0 8px 0;
+            font-size: 26px;
+        }
+
+        .figure-card p {
+            color: var(--muted);
+            font-size: 16px;
+            line-height: 1.55;
+            margin: 0 0 16px 0;
+        }
+
+        .figure-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 4px;
+        }
+
+        .notes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .note {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 18px;
+            background: white;
+        }
+
+        .note h3 {
+            margin: 0 0 8px 0;
+            color: var(--accent);
+        }
+
+        .note p {
+            color: var(--muted);
+            line-height: 1.55;
+            margin: 0;
+        }
+
+        @media (max-width: 850px) {
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .notes {
+                grid-template-columns: 1fr;
+            }
+
+            .figure-card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <div class="topbar">
+            <strong>The Cycle of Bitcoin</strong>
+            <a class="home-link" href="../index.html">Main Page</a>
+        </div>
+
+        <h1>Bitcoin Downward Periods</h1>
+        <p class="lede">
+            These figures isolate the downward part of each Bitcoin cycle:
+            the move from a cycle top to the following cycle bottom. Prices are
+            normalized to the cycle top, making cycles with very different
+            dollar prices directly comparable.
+        </p>
+
+        <section class="figure-card">
+            <h2>Downward After the Top</h2>
+            <p>
+                Each line begins at a cycle top indexed to 100. Dashed vertical
+                lines and annotations mark the historical bottoms of completed
+                downward periods.
+            </p>
+            <img src="assets/bitcoin_cycle_down_figure_1.png" alt="Bitcoin downward periods after cycle tops">
+        </section>
+
+        <section class="figure-card">
+            <h2>Major Decrease Batches</h2>
+            <p>
+                The second figure separates the cycles and applies a 28-day
+                moving average. Red numbered segments mark sustained decline
+                batches detected by the same rule in every cycle.
+            </p>
+            <img src="assets/bitcoin_cycle_down_figure_2.png" alt="Major decrease batches in Bitcoin downward periods">
+        </section>
+
+        <section class="notes">
+            <div class="note">
+                <h3>Normalized scale</h3>
+                <p>
+                    The cycle top is set to 100, so a value of 40 means price is
+                    40% of the top, or a 60% decline.
+                </p>
+            </div>
+            <div class="note">
+                <h3>Wave structure</h3>
+                <p>
+                    Downward periods are not one continuous fall. They are built
+                    from sharp declines, rebounds, pauses, and renewed selling.
+                </p>
+            </div>
+            <div class="note">
+                <h3>Current cycle</h3>
+                <p>
+                    The latest cycle should be interpreted as incomplete until a
+                    later durable bottom is known.
+                </p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
